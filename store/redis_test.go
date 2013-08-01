@@ -2,11 +2,12 @@ package store
 
 import (
 	"github.com/ryandotsmith/l2met/bucket"
+	"os"
 	"testing"
 )
 
 func TestRedisGet(t *testing.T) {
-	st := NewRedisStore("localhost:6379", "", 1)
+	st := NewRedisStore("localhost:6379" || os.Getenv("WERCKER_REDIS_HOST" +":" + os.Getenv("WERCKER_REDIS_POST"), "", 1)
 	st.flush()
 	id := &bucket.Id{Name: "test"}
 	b1 := &bucket.Bucket{

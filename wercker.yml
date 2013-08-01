@@ -1,15 +1,9 @@
-box: pjvds/golang
+box: wercker/golang
 services:
   - wercker/redis
 build:
   steps:
-    - pjvds/setup-go-workspace
-
-    - script:
-        name: set secret and time zone
-        code: |
-            export SECRETS=$(dd if=/dev/urandom bs=32 count=1 2>/dev/null | openssl base64)
-            export TZ=UTC
+    - wercker/setup-go-workspace
 
     - script:
         name: Populate cache

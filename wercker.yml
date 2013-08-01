@@ -1,1 +1,3 @@
 box: pjvds/golang
+services:
+  - wercker/redis

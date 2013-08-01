@@ -7,7 +7,7 @@ import (
 )
 
 func TestRedisGet(t *testing.T) {
-	st := NewRedisStore(os.Getenv("WERCKER_REDIS_URL"), "", 1)
+	st := NewRedisStore(os.Getenv("REDIS_URL"), "", 1)
 	st.flush()
 	id := &bucket.Id{Name: "test"}
 	b1 := &bucket.Bucket{
